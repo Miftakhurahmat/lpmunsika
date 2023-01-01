@@ -20,13 +20,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return Inertia::render("Home", [
+        return Inertia::render("Home/Index", [
             "categories" => Category::get(),
-            "articles" => Article::with(["user:id,name", "category:id,slug,category_name"])->get(),
+            "articles" => Article::with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->get(),
             'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
-            'laravelVersion' => Application::VERSION,
-            'phpVersion' => PHP_VERSION,
         ]);
     }
 
@@ -48,7 +46,7 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 
     }
 
     /**
@@ -57,9 +55,21 @@ class HomeController extends Controller
      * @param  \App\Models\Home  $home
      * @return \Illuminate\Http\Response
      */
-    public function show(Home $home)
+    public function show(Request $request, $slug)
     {
-        //
+        $search = $request->search;
+
+        Article::where("slug", $slug)->increment("views", 1);
+
+        return Inertia::render("Home/Show", [
+            "slug" => $slug,
+            "categories" => Category::get(),
+            "article" => Article::where("slug", $slug)->with("user:id,name", "category:id,category_name")->first(),
+            "articles" => Article::with("user:id,name", "category:id,category_name")->orderBy("id", "DESC")->get(),
+            "search" => Article::where("body", "like", "%" . $search . "%")->with("user:id,name", "category:id,category_name")->orderBy("id", "DESC")->get(),
+            "request" => $search
+
+        ]);
     }
 
     /**

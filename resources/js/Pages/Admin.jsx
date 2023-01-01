@@ -1,8 +1,15 @@
 import React from "react";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/inertia-react";
+import { Link } from "@inertiajs/inertia-react";
 
 export default function Admin(props) {
+    const sortView = () => {
+        return props.articles.sort((a, b) => {
+            return b.views - a.views;
+        });
+    };
+
     return (
         <AuthenticatedLayout
             auth={props.auth}
@@ -33,7 +40,7 @@ export default function Admin(props) {
                     </svg>
                     <div className="flex flex-col pl-1">
                         <h1 className="font-bold">User</h1>
-                        <p>1</p>
+                        <p>{props.users.length}</p>
                     </div>
                 </div>
                 <div className="bg-slate-50 shadow-lg rounded-lg justify-center h-20 mx-1 flex w-1/3 items-center">
@@ -53,7 +60,7 @@ export default function Admin(props) {
                     </svg>
                     <div className="flex flex-col pl-1">
                         <h1 className="font-bold">Article</h1>
-                        <p>1</p>
+                        <p>{props.articles.length}</p>
                     </div>
                 </div>
                 <div className="bg-slate-50 shadow-lg rounded-lg justify-center h-20 mx-1 flex w-1/3 items-center">
@@ -78,7 +85,7 @@ export default function Admin(props) {
                     </svg>
                     <div className="flex flex-col pl-1">
                         <h1 className="font-bold">Category</h1>
-                        <p>1</p>
+                        <p>{props.categories.length}</p>
                     </div>
                 </div>
             </div>
@@ -87,12 +94,25 @@ export default function Admin(props) {
                 <div className="w-2/3 rounded-lg bg-slate-50 shadow-lg mx-1 p-3">
                     <h1 className="font-bold">Article Draft</h1>
                     <hr />
-                    <p>Hello World !!!</p>
+                    {props.articles
+                        .filter((article) => article.is_active === 2)
+                        .map((article) => (
+                            <Link
+                                key={article.id}
+                                href={"/article/" + article.id + "/edit"}
+                            >
+                                {article.title}
+                            </Link>
+                        ))}
                 </div>
                 <div className="w-1/3 rounded-lg bg-slate-50 shadow-lg mx-1 p-3">
                     <h1 className="font-bold">Most Popular Article</h1>
                     <hr />
-                    <p>Hello World !!!</p>
+                    {sortView().map((e) => (
+                        <p>
+                            {e.title} ({e.views})
+                        </p>
+                    ))}
                 </div>
             </div>
         </AuthenticatedLayout>

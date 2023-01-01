@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use File;
 
 
 class ArticleController extends Controller
@@ -55,7 +56,7 @@ class ArticleController extends Controller
         ]);
 
         $image = $request->file("image");
-        $image->storeAs("public/article", $image->hashName());
+        $image->storeAs("public", $image->hashName());
 
         Article::create([
             "title" => $request->title,
@@ -123,9 +124,9 @@ class ArticleController extends Controller
                 "views" => 0,
             ]);
         } else {
-            Storage::disk("local")->delete("public/article/" . $article->image);
+            Storage::disk("local")->delete("public" . $article->image);
             $image = $request->file("image");
-            $image->storeAs("public/article", $image->hashName());
+            $image->storeAs("public", $image->hashName());
             $article->update([
                 "title" => $request->title,
                 "slug" => Str::slug($request->title),
@@ -149,7 +150,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        Storage::disk("local")->delete("public/article/" . $article->image);
+        Storage::disk("local")->delete("public" . $article->image);
         $article->delete();
         return redirect(route("article.index"))->with("success", "Data Deleted Successfully");
     }

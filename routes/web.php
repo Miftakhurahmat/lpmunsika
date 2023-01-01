@@ -30,7 +30,7 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, "index"]);
 
-Route::resource('/home', CategoryController::class);
+Route::get('/detail/{slug}', [HomeController::class, "show"]);
 
 Route::get('/admin', [AdminController::class, "index"])->middleware(['auth', 'verified'])->name('admin');
 
