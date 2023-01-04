@@ -14,7 +14,7 @@ export default function Index({ auth, categories, session }) {
         >
             <Head title="Category" />
 
-            <div className="m-5 2xl:mx-20 lg:mx-20">
+            <div className="m-5 xl:mx-20">
                 <Link href={"/category/create"}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

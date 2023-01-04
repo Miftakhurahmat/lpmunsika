@@ -14,7 +14,7 @@ export default function Index({ auth, articles, session }) {
         >
             <Head title="Article" />
 
-            <div className="m-5 2xl:mx-20 lg:mx-20">
+            <div className="m-5 xl:mx-20">
                 <Link href={"/article/create"}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@ export default function Index({ auth, articles, session }) {
                         {session.success}
                     </div>
                 )}
-                <div className="mt-5 bg-slate-50 rounded-lg shadow-lg p-3">
+                <div className="mt-5 bg-slate-50 rounded-lg shadow-lg p-3 text-xs xl:text-base">
                     <table className="table-auto w-full">
                         <thead>
                             <tr className="border-b-2">
@@ -49,14 +49,17 @@ export default function Index({ auth, articles, session }) {
                             </tr>
                         </thead>
                         <tbody>
-                            {articles.map((article) => (
-                                <tr className="text-center" key={article.id}>
-                                    <td>{article.id}</td>
-                                    <td>{article.title}</td>
+                            {articles.data.map((article) => (
+                                <tr
+                                    className="text-center border-b-2"
+                                    key={article.id}
+                                >
+                                    <td className="py-10">{article.id}</td>
+                                    <td className="px-5">{article.title}</td>
                                     <td>{article.slug}</td>
                                     <td>{article.category.category_name}</td>
                                     <td>{article.user.name}</td>
-                                    <td className="flex justify-center p-3">
+                                    <td>
                                         <Link
                                             as="button"
                                             href={route(
@@ -107,6 +110,73 @@ export default function Index({ auth, articles, session }) {
                             ))}
                         </tbody>
                     </table>
+                    <div className="text-sm flex justify-center items-center gap-3 pt-5 xl:text-base xl:gap-5">
+                        <Link href={articles.first_page_url}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-3 xl:w-4"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5"
+                                />
+                            </svg>
+                        </Link>
+                        <Link href={articles.prev_page_url}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-3 xl:w-4"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M15.75 19.5L8.25 12l7.5-7.5"
+                                />
+                            </svg>
+                        </Link>
+                        <p>{articles.current_page}</p>
+                        <Link href={articles.next_page_url}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-3 xl:w-4"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                                />
+                            </svg>
+                        </Link>
+                        <Link href={articles.last_page_url}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-3 xl:w-4"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
+                                />
+                            </svg>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </AuthenticatedLayout>

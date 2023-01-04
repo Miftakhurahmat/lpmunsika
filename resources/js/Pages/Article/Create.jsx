@@ -30,18 +30,9 @@ export default function Create({ auth, categories }) {
         >
             <Head>
                 <title>Article Form</title>
-                <link
-                    rel="stylesheet"
-                    type="text/css"
-                    href="https://unpkg.com/trix@2.0.0/dist/trix.css"
-                />
-                <script
-                    type="text/javascript"
-                    src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"
-                ></script>
             </Head>
 
-            <div className="m-5 2xl:mx-20 lg:mx-20">
+            <div className="m-5 xl:mx-20">
                 <form onSubmit={submit}>
                     <div>
                         <label className="font-semibold text-lg">Title</label>

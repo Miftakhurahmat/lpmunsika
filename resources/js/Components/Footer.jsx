@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer({ categories, slug }) {
     return (
-        <footer className="bg-slate-800 p-5 text-slate-300">
+        <footer className="bg-slate-800 p-5 text-slate-300 xl:px-32">
             {slug === undefined ? (
                 <div>
                     {" "}

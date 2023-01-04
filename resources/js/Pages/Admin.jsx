@@ -5,7 +5,7 @@ import { Link } from "@inertiajs/inertia-react";
 
 export default function Admin(props) {
     const sortView = () => {
-        return props.articles.sort((a, b) => {
+        return props.articles.data.sort((a, b) => {
             return b.views - a.views;
         });
     };
@@ -22,7 +22,7 @@ export default function Admin(props) {
         >
             <Head title="Admin" />
 
-            <div className="flex mx-3 mt-5 lg:mx-20 2xl:mx-20">
+            <div className="flex mx-3 mt-5 xl:mx-20">
                 <div className="bg-slate-50 shadow-lg rounded-lg justify-center h-20 mx-1 flex w-1/3 items-center">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ export default function Admin(props) {
                     </svg>
                     <div className="flex flex-col pl-1">
                         <h1 className="font-bold">User</h1>
-                        <p>{props.users.length}</p>
+                        <p className="text-center">{props.users.length}</p>
                     </div>
                 </div>
                 <div className="bg-slate-50 shadow-lg rounded-lg justify-center h-20 mx-1 flex w-1/3 items-center">
@@ -60,7 +60,7 @@ export default function Admin(props) {
                     </svg>
                     <div className="flex flex-col pl-1">
                         <h1 className="font-bold">Article</h1>
-                        <p>{props.articles.length}</p>
+                        <p className="text-center">{props.articles.total}</p>
                     </div>
                 </div>
                 <div className="bg-slate-50 shadow-lg rounded-lg justify-center h-20 mx-1 flex w-1/3 items-center">
@@ -85,16 +85,16 @@ export default function Admin(props) {
                     </svg>
                     <div className="flex flex-col pl-1">
                         <h1 className="font-bold">Category</h1>
-                        <p>{props.categories.length}</p>
+                        <p className="text-center">{props.categories.length}</p>
                     </div>
                 </div>
             </div>
 
-            <div className="flex mx-3 mt-5 lg:mx-20 2xl:mx-20">
+            <div className="flex mx-3 mt-5 xl:mx-20">
                 <div className="w-2/3 rounded-lg bg-slate-50 shadow-lg mx-1 p-3">
                     <h1 className="font-bold">Article Draft</h1>
                     <hr />
-                    {props.articles
+                    {props.articles.data
                         .filter((article) => article.is_active === 2)
                         .map((article) => (
                             <Link
@@ -109,10 +109,77 @@ export default function Admin(props) {
                     <h1 className="font-bold">Most Popular Article</h1>
                     <hr />
                     {sortView().map((e) => (
-                        <p>
+                        <p className="text-xs py-3 xl:text-base" key={e.id}>
                             {e.title} ({e.views})
                         </p>
                     ))}
+                    <div className="text-sm flex justify-center items-center gap-3 pt-5 xl:text-base xl:gap-5">
+                        <Link href={props.articles.first_page_url}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-3 xl:w-4"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5"
+                                />
+                            </svg>
+                        </Link>
+                        <Link href={props.articles.prev_page_url}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-3 xl:w-4"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M15.75 19.5L8.25 12l7.5-7.5"
+                                />
+                            </svg>
+                        </Link>
+                        <p>{props.articles.current_page}</p>
+                        <Link href={props.articles.next_page_url}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-3 xl:w-4"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                                />
+                            </svg>
+                        </Link>
+                        <Link href={props.articles.last_page_url}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-3 xl:w-4"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
+                                />
+                            </svg>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </AuthenticatedLayout>

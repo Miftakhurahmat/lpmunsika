@@ -22,7 +22,7 @@ class ArticleController extends Controller
     public function index()
     {
         return Inertia::render("Article/Index", [
-            "articles" => Article::with(["user:id,name", "category:id,category_name"])->get()
+            "articles" => Article::with(["user:id,name", "category:id,category_name"])->orderBy("id", "DESC")->paginate(10)
         ]);
     }
 
@@ -150,7 +150,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        Storage::disk("local")->delete("public" . $article->image);
+        Storage::disk("local")->delete("public/" . $article->image);
         $article->delete();
         return redirect(route("article.index"))->with("success", "Data Deleted Successfully");
     }

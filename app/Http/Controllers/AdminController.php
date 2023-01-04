@@ -20,7 +20,7 @@ class AdminController extends Controller
     {
         return Inertia::render("Admin", [
             "users" => User::get(),
-            "articles" => Article::with("user:id,name", "category:id,category_name")->get(),
+            "articles" => Article::with("user:id,name", "category:id,category_name")->orderBy("id", "DESC")->paginate(10),
             "categories" => Category::get(),
         ]);
     }

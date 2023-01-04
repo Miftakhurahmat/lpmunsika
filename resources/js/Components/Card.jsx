@@ -10,7 +10,7 @@ export default function Card({ articles, slug }) {
                     <article key={article.id} className="pt-10">
                         <figure>
                             <img
-                                className="rounded-xl"
+                                className="rounded-xl w-full"
                                 src={"/storage/" + article.image}
                                 alt={article.title}
                             />

@@ -31,18 +31,9 @@ export default function Edit({ auth, categories, article }) {
         >
             <Head>
                 <title>Article Edit</title>
-                <link
-                    rel="stylesheet"
-                    type="text/css"
-                    href="https://unpkg.com/trix@2.0.0/dist/trix.css"
-                />
-                <script
-                    type="text/javascript"
-                    src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"
-                ></script>
             </Head>
 
-            <div className="m-5">
+            <div className="m-5 xl:mx-20">
                 <form onSubmit={submit}>
                     <div>
                         <label className="font-semibold text-lg">Title</label>
@@ -58,8 +49,8 @@ export default function Edit({ auth, categories, article }) {
                     <div className="mt-5">
                         <label className="font-semibold text-lg">Body</label>
                         <TrixEditor
-                            onChange={(e) => setData("body", e)}
                             value={data.body}
+                            onChange={(e) => setData("body", e)}
                         />
                     </div>
                     <div className="mt-5">

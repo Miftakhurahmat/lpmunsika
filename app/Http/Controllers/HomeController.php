@@ -22,7 +22,11 @@ class HomeController extends Controller
     {
         return Inertia::render("Home/Index", [
             "categories" => Category::get(),
-            "articles" => Article::with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->get(),
+            "articles" => Article::with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(3),
+            "berita" => Article::where("category_id", 1)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(3),
+            "buletin" => Article::where("category_id", 2)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(3),
+            "karyaMahasiswa" => Article::where("category_id", 3)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(3),
+            "opini" => Article::where("category_id", 4)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(3),
             'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
         ]);
@@ -65,7 +69,11 @@ class HomeController extends Controller
             "slug" => $slug,
             "categories" => Category::get(),
             "article" => Article::where("slug", $slug)->with("user:id,name", "category:id,category_name")->first(),
-            "articles" => Article::with("user:id,name", "category:id,category_name")->orderBy("id", "DESC")->get(),
+            "articles" => Article::with("user:id,name", "category:id,category_name")->orderBy("id", "DESC")->paginate(10),
+            "berita" => Article::where("category_id", 1)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
+            "buletin" => Article::where("category_id", 2)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
+            "karyaMahasiswa" => Article::where("category_id", 3)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
+            "opini" => Article::where("category_id", 4)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
             "search" => Article::where("body", "like", "%" . $search . "%")->with("user:id,name", "category:id,category_name")->orderBy("id", "DESC")->get(),
             "request" => $search
 

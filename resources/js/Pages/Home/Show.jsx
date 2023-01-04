@@ -15,6 +15,10 @@ export default function Show({
     categories,
     article,
     articles,
+    berita,
+    buletin,
+    karyaMahasiswa,
+    opini,
     search,
     request,
 }) {
@@ -28,7 +32,10 @@ export default function Show({
             <CategoryLayout
                 slug={slug}
                 categories={categories}
-                articles={articles}
+                berita={berita}
+                buletin={buletin}
+                karyaMahasiswa={karyaMahasiswa}
+                opini={opini}
             />
         );
     } else if (slug === "search") {
