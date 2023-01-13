@@ -161,7 +161,7 @@ export default function Footer({ categories, slug }) {
                 </a>
             </div>
             <div className="text-center pt-5">
-                <h2>LPM Unsika © 2022</h2>
+                <h2>LPM Unsika © 2023</h2>
             </div>
         </footer>
     );

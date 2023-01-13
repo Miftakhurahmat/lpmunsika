@@ -3,7 +3,6 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import InputError from "@/Components/InputError";
 import PrimaryButton from "@/Components/PrimaryButton";
 import { useForm, Head } from "@inertiajs/inertia-react";
-import { TrixEditor } from "react-trix";
 
 export default function Edit({ auth, categories, article }) {
     const { data, setData, post, processing, reset, errors } = useForm({
@@ -20,6 +19,10 @@ export default function Edit({ auth, categories, article }) {
         post(route("article.update", article.id)), { onSuccess: () => reset() };
     };
 
+    const save = () => {
+        setData("body", document.querySelector("#x").getAttribute("value"));
+    };
+
     return (
         <AuthenticatedLayout
             auth={auth}
@@ -31,6 +34,15 @@ export default function Edit({ auth, categories, article }) {
         >
             <Head>
                 <title>Article Edit</title>
+                <link
+                    rel="stylesheet"
+                    type="text/css"
+                    href="https://unpkg.com/trix@2.0.0/dist/trix.css"
+                />
+                <script
+                    type="text/javascript"
+                    src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"
+                ></script>
             </Head>
 
             <div className="m-5 xl:mx-20">
@@ -48,10 +60,21 @@ export default function Edit({ auth, categories, article }) {
                     </div>
                     <div className="mt-5">
                         <label className="font-semibold text-lg">Body</label>
-                        <TrixEditor
+                        <input
+                            id="x"
+                            type="hidden"
+                            name="content"
                             value={data.body}
-                            onChange={(e) => setData("body", e)}
                         />
+                        <trix-editor input="x"></trix-editor>
+                        <div className="flex gap-3">
+                            <div
+                                onClick={() => save()}
+                                className="hover:cursor-pointer w-min mt-3 border-slate-400 border p-1 text-slate-800 font-bold text-xs rounded"
+                            >
+                                save
+                            </div>
+                        </div>
                     </div>
                     <div className="mt-5">
                         <label className="font-semibold text-lg">

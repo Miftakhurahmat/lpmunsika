@@ -109,7 +109,7 @@ export default function NavBar({ slug, categories }) {
                         />
                         <button
                             type="submit"
-                            className="absolute right-36 top-1.5"
+                            className="absolute top-1.5 right-20"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

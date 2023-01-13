@@ -1,14 +1,12 @@
 import "./bootstrap";
 import "../css/app.css";
-import "trix/dist/trix.css";
-import "trix/dist/trix.esm";
-import "trix/dist/trix.umd";
 
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { createInertiaApp } from "@inertiajs/inertia-react";
 import { InertiaProgress } from "@inertiajs/progress";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
+import { Inertia } from "@inertiajs/inertia";
 
 const appName =
     window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
@@ -28,3 +26,9 @@ createInertiaApp({
 });
 
 InertiaProgress.init({ color: "#4B5563" });
+
+Inertia.on("navigate", (event) => {
+    gtag("event", "page_view", {
+        page_location: event.detail.page.url,
+    });
+});
