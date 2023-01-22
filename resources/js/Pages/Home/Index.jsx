@@ -5,6 +5,7 @@ import Footer from "@/Components/Footer";
 import Card from "@/Components/Card";
 import Youtube from "@/Components/Youtube";
 import Podcast from "@/Components/Podcast";
+import Hero from "@/Components/Hero";
 
 export default function Index({
     categories,
@@ -31,7 +32,9 @@ export default function Index({
                             Berita Terkini
                         </Link>
                         <hr />
-                        <Card articles={articles.data} />
+                        <div className="pt-10">
+                            <Hero articles={articles} />
+                        </div>
                     </div>
                     <div className="pt-10">
                         <Link

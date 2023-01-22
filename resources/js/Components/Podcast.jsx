@@ -12,27 +12,29 @@ export default function Podcast() {
             <iframe
                 className="mt-10 h-60"
                 style={{ borderRadius: "12px" }}
+                src="https://open.spotify.com/embed/episode/4BhPeawI8KaAt4QWs8WU6R?utm_source=generator"
+                width="100%"
+                height="352"
+                frameBorder="0"
+                allowFullScreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+            ></iframe>
+            <iframe
+                className="mt-10 h-60"
+                style={{ borderRadius: "12px" }}
+                src="https://open.spotify.com/embed/episode/7mnh3SITOqSnNHVnnnm6SF?utm_source=generator"
+                width="100%"
+                height="352"
+                frameBorder="0"
+                allowFullScreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+            ></iframe>
+            <iframe
+                className="mt-10 h-60"
+                style={{ borderRadius: "12px" }}
                 src="https://open.spotify.com/embed/episode/08CYFYL5P51RtXlcGTit85?utm_source=generator"
-                width="100%"
-                frameBorder="0"
-                allowFullScreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-            ></iframe>
-            <iframe
-                className="mt-10 h-60"
-                style={{ borderRadius: "12px" }}
-                src="https://open.spotify.com/embed/episode/0zTFzIRgAhyfGn3Azm7jOj?utm_source=generator"
-                width="100%"
-                frameBorder="0"
-                allowFullScreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-            ></iframe>
-            <iframe
-                className="mt-10 h-60"
-                style={{ borderRadius: "12px" }}
-                src="https://open.spotify.com/embed/episode/4tqdAGP3A2uxty0gwrSIMn?utm_source=generator"
                 width="100%"
                 frameBorder="0"
                 allowFullScreen=""

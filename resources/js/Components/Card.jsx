@@ -13,6 +13,7 @@ export default function Card({ articles, slug }) {
                                 className="rounded-xl w-full"
                                 src={"/storage/" + article.image}
                                 alt={article.title}
+                                loading="lazy"
                             />
                         </figure>
                         <figcaption className="pt-3">
