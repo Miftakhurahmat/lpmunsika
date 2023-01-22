@@ -20,7 +20,7 @@ export default function NavBar({ slug, categories }) {
         exiting: {
             transform: "translateY(-500px)",
             position: "absolute",
-            left: "60px",
+            left: "55px",
         },
         exited: { transform: "translateY(-500px)", position: "absolute" },
     };

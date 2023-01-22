@@ -29,7 +29,7 @@ export default function Index({
                             href="/detail/lastest"
                             className="font-bold text-3xl border-b-8 w-max border-red-500 uppercase hover:cursor-pointer"
                         >
-                            Berita Terkini
+                            Terbaru
                         </Link>
                         <hr />
                         <div className="pt-10">

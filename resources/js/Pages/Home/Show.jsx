@@ -1,8 +1,4 @@
 import React from "react";
-import { Head } from "@inertiajs/inertia-react";
-import Footer from "../../Components/Footer";
-import NavBar from "../../Components/NavBar";
-import Card from "@/Components/Card";
 import AboutLayout from "@/Layouts/AboutLayout";
 import PedomanLayout from "@/Layouts/PedomanLayout";
 import ArticleLayout from "@/Layouts/ArticleLayout";

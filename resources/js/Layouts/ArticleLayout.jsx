@@ -3,7 +3,7 @@ import NavBar from "@/Components/NavBar";
 import Podcast from "@/Components/Podcast";
 import Youtube from "@/Components/Youtube";
 import { Head } from "@inertiajs/inertia-react";
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function ArticleLayout({ categories, slug, article }) {
     (function () {
@@ -14,6 +14,27 @@ export default function ArticleLayout({ categories, slug, article }) {
         s.setAttribute("data-timestamp", +new Date());
         (d.head || d.body).appendChild(s);
     })();
+
+    useEffect(() => {
+        const img = document.querySelectorAll("img");
+        for (let i = 2; i < img.length; i++) {
+            img[i].style.borderTopLeftRadius = "10px";
+            img[i].style.borderTopRightRadius = "10px";
+            img[i].style.width = "100%";
+        }
+        const figCaption = document.querySelectorAll("figcaption");
+        for (let i = 1; i < figCaption.length; i++) {
+            figCaption[i].style.fontSize = "12px";
+            figCaption[i].style.fontWeight = "bold";
+            figCaption[i].style.fontStyle = "italic";
+            figCaption[i].style.backgroundColor = "#f2f2f2";
+            figCaption[i].style.opacity = 0.8;
+            figCaption[i].style.padding = "10px";
+            figCaption[i].style.textAlign = "center";
+            figCaption[i].style.borderBottomLeftRadius = "10px";
+            figCaption[i].style.borderBottomRightRadius = "10px";
+        }
+    });
 
     return (
         <>
@@ -91,7 +112,7 @@ export default function ArticleLayout({ categories, slug, article }) {
                                     <p>{article.category.category_name}</p>
                                 </div>
                             </div>
-                            <div className="text-left pt-1 font-bold text-3xl border-b-8 w-full border-red-500 uppercase">
+                            <div className="text-xl text-left pt-1 font-bold xl:text-3xl border-b-8 w-full border-red-500 uppercase">
                                 <h2>{article.title}</h2>
                             </div>
                             <hr />
