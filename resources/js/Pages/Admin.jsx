@@ -30,7 +30,7 @@ export default function Admin(props) {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-10 h-10"
+                        className="w-6"
                     >
                         <path
                             strokeLinecap="round"
@@ -39,7 +39,7 @@ export default function Admin(props) {
                         />
                     </svg>
                     <div className="flex flex-col pl-1">
-                        <h1 className="font-bold">User</h1>
+                        <h1 className="font-bold text-xs">User</h1>
                         <p className="text-center">{props.users.length}</p>
                     </div>
                 </div>
@@ -50,7 +50,7 @@ export default function Admin(props) {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-10 h-10"
+                        className="w-6"
                     >
                         <path
                             strokeLinecap="round"
@@ -59,7 +59,7 @@ export default function Admin(props) {
                         />
                     </svg>
                     <div className="flex flex-col pl-1">
-                        <h1 className="font-bold">Article</h1>
+                        <h1 className="font-bold text-xs">Article</h1>
                         <p className="text-center">{props.articles.total}</p>
                     </div>
                 </div>
@@ -70,7 +70,7 @@ export default function Admin(props) {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-10 h-10"
+                        className="w-6"
                     >
                         <path
                             strokeLinecap="round"
@@ -84,7 +84,7 @@ export default function Admin(props) {
                         />
                     </svg>
                     <div className="flex flex-col pl-1">
-                        <h1 className="font-bold">Category</h1>
+                        <h1 className="font-bold text-xs">Category</h1>
                         <p className="text-center">{props.categories.length}</p>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ export default function Admin(props) {
 
             <div className="flex mx-3 mt-5 xl:mx-20">
                 <div className="w-2/3 rounded-lg bg-slate-50 shadow-lg mx-1 p-3">
-                    <h1 className="font-bold">Article Draft</h1>
+                    <h1 className="font-bold text-sm">Article Draft</h1>
                     <hr />
                     {props.articles.data
                         .filter((article) => article.is_active === 2)

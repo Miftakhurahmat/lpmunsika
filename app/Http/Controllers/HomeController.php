@@ -22,7 +22,7 @@ class HomeController extends Controller
     {
         return Inertia::render("Home/Index", [
             "categories" => Category::get(),
-            "articles" => Article::with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(3),
+            "articles" => Article::where("is_active", 1)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(3),
             "berita" => Article::where("category_id", 1)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(3),
             "buletin" => Article::where("category_id", 2)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(3),
             "karyaMahasiswa" => Article::where("category_id", 3)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(3),

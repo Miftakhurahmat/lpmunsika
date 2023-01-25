@@ -36,8 +36,8 @@ export default function Index({ auth, articles, session }) {
                         {session.success}
                     </div>
                 )}
-                <div className="mt-5 bg-slate-50 rounded-lg shadow-lg p-3 text-xs xl:text-base">
-                    <table className="table-auto w-full">
+                <div className="mt-5 bg-slate-50 rounded-lg shadow-lg p-3 text-xs xl:text-base w-min xl:w-full">
+                    <table className="table-auto">
                         <thead>
                             <tr className="border-b-2">
                                 <th>ID</th>
