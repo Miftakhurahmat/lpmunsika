@@ -51,15 +51,61 @@ export default function Footer({ categories, slug }) {
                             Kategori Tulisan
                         </h2>
                         <div className="flex flex-col">
-                            {categories.map((category) => (
-                                <Link
-                                    href={"detail/" + category.slug}
-                                    key={category.id}
-                                    className="transition ease-in-out duration-300 hover:text-red-500"
-                                >
-                                    {category.category_name}
-                                </Link>
-                            ))}
+                            <Link
+                                href={"detail/berita"}
+                                className="transition ease-in-out duration-300 hover:text-red-500"
+                            >
+                                Berita
+                            </Link>
+                            <Link
+                                href={"detail/buletin"}
+                                className="transition ease-in-out duration-300 hover:text-red-500"
+                            >
+                                Buletin
+                            </Link>
+                            <div className="relative">
+                                <p className="transition ease-in-out duration-300 hover:text-red-500 peer cursor-pointer">
+                                    Karya Mahasiswa
+                                </p>
+                                <div className="absolute bg-slate-800 flex flex-col w-full gap-1 z-10 px-3 py-1 invisible peer-hover:visible hover:visible">
+                                    <Link
+                                        className="hover:text-red-500"
+                                        href="detail/resensi-buku"
+                                    >
+                                        Resensi Buku
+                                    </Link>
+                                    <Link
+                                        className="hover:text-red-500"
+                                        href="detail/review-film"
+                                    >
+                                        Review Film
+                                    </Link>
+                                    <Link
+                                        className="hover:text-red-500"
+                                        href="detail/opini"
+                                    >
+                                        Opini
+                                    </Link>
+                                    <Link
+                                        className="hover:text-red-500"
+                                        href="detail/esai"
+                                    >
+                                        Esai
+                                    </Link>
+                                    <Link
+                                        className="hover:text-red-500"
+                                        href="detail/puisi"
+                                    >
+                                        Puisi
+                                    </Link>
+                                </div>
+                            </div>
+                            <Link
+                                href={"detail/gaya-mahasiswa"}
+                                className="transition ease-in-out duration-300 hover:text-red-500"
+                            >
+                                Gaya Mahasiswa
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -71,8 +117,16 @@ export default function Footer({ categories, slug }) {
                             LPM Unsika
                         </h2>
                         <div className="flex flex-col">
-                            <Link href="tentang-kami">Tentang Kami</Link>
-                            <Link href="pedoman-media-siber">
+                            <Link
+                                href="tentang-kami"
+                                className="transition ease-in-out duration-300 hover:text-red-500"
+                            >
+                                Tentang Kami
+                            </Link>
+                            <Link
+                                href="pedoman-media-siber"
+                                className="transition ease-in-out duration-300 hover:text-red-500"
+                            >
                                 Pedoman Media Siber
                             </Link>
                         </div>
@@ -82,10 +136,16 @@ export default function Footer({ categories, slug }) {
                             Hubungi Kami
                         </h2>
                         <div className="flex flex-col">
-                            <a href="mailto:lpmunsika@gmail.com">
+                            <a
+                                href="mailto:lpmunsika@gmail.com"
+                                className="transition ease-in-out duration-300 hover:text-red-500"
+                            >
                                 lpmunsika@gmail.com
                             </a>
-                            <a href="https://goo.gl/maps/MpGgF2JwYMmTEWaD6">
+                            <a
+                                href="https://goo.gl/maps/MpGgF2JwYMmTEWaD6"
+                                className="transition ease-in-out duration-300 hover:text-red-500"
+                            >
                                 Jl. HS.Ronggo Waluyo, Puseurjaya, Telukjambe
                                 Timur, Karawang, Jawa Barat 41361
                             </a>
@@ -96,11 +156,61 @@ export default function Footer({ categories, slug }) {
                             Kategori Tulisan
                         </h2>
                         <div className="flex flex-col">
-                            {categories.map((category) => (
-                                <Link href={category.slug} key={category.id}>
-                                    {category.category_name}
-                                </Link>
-                            ))}
+                            <Link
+                                href={"berita"}
+                                className="transition ease-in-out duration-300 hover:text-red-500"
+                            >
+                                Berita
+                            </Link>
+                            <Link
+                                href={"buletin"}
+                                className="transition ease-in-out duration-300 hover:text-red-500"
+                            >
+                                Buletin
+                            </Link>
+                            <div className="relative">
+                                <p className="transition ease-in-out duration-300 hover:text-red-500 peer cursor-pointer">
+                                    Karya Mahasiswa
+                                </p>
+                                <div className="absolute bg-slate-800 flex flex-col w-full gap-1 z-10 px-3 py-1 invisible peer-hover:visible hover:visible">
+                                    <Link
+                                        className="hover:text-red-500"
+                                        href="resensi-buku"
+                                    >
+                                        Resensi Buku
+                                    </Link>
+                                    <Link
+                                        className="hover:text-red-500"
+                                        href="review-film"
+                                    >
+                                        Review Film
+                                    </Link>
+                                    <Link
+                                        className="hover:text-red-500"
+                                        href="opini"
+                                    >
+                                        Opini
+                                    </Link>
+                                    <Link
+                                        className="hover:text-red-500"
+                                        href="esai"
+                                    >
+                                        Esai
+                                    </Link>
+                                    <Link
+                                        className="hover:text-red-500"
+                                        href="puisi"
+                                    >
+                                        Puisi
+                                    </Link>
+                                </div>
+                            </div>
+                            <Link
+                                href={"gaya-mahasiswa"}
+                                className="transition ease-in-out duration-300 hover:text-red-500"
+                            >
+                                Gaya Mahasiswa
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -175,7 +285,7 @@ export default function Footer({ categories, slug }) {
                     </svg>
                 </a>
             </div>
-            <div className="text-center pt-5">
+            <div className="text-center pt-20">
                 <h2>LPM Unsika © 2023</h2>
             </div>
         </footer>

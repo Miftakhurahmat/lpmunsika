@@ -73,7 +73,12 @@ class HomeController extends Controller
             "berita" => Article::where("category_id", 1)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
             "buletin" => Article::where("category_id", 2)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
             "karyaMahasiswa" => Article::where("category_id", 3)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
-            "opini" => Article::where("category_id", 4)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
+            "gayaMahasiswa" => Article::where("category_id", 4)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
+            "resensiBuku" => Article::where("category_id", 5)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
+            "reviewFilm" => Article::where("category_id", 6)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
+            "opini" => Article::where("category_id", 7)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
+            "esai" => Article::where("category_id", 8)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
+            "puisi" => Article::where("category_id", 9)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
             "search" => Article::where("body", "like", "%" . $search . "%")->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->get(),
             "request" => $search
 

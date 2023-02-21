@@ -20,7 +20,7 @@ export default function LastestLayout({ categories, slug, articles }) {
                         Berita Terkini
                     </h2>
                     <hr />
-                    <Card articles={articles.data} />
+                    <Card articles={articles.data} slug={slug} />
                     <Pagination articles={articles} />
                 </section>
 

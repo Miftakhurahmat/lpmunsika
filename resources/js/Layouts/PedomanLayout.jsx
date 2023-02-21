@@ -16,7 +16,7 @@ export default function PedomanLayout({ categories, slug }) {
                 <section className="p-5 xl:col-span-2">
                     <article>
                         <figcaption className="text-justify">
-                            <h2 className="font-bold text-3xl border-b-8 w-max border-red-500 uppercase">
+                            <h2 className="font-bold text-xl xl:text-3xl border-b-8 w-max border-red-500 uppercase">
                                 Pedoman Media Siber
                             </h2>
                             <hr />

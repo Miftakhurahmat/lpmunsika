@@ -14,7 +14,12 @@ export default function Show({
     berita,
     buletin,
     karyaMahasiswa,
+    gayaMahasiswa,
+    resensiBuku,
+    reviewFilm,
     opini,
+    esai,
+    puisi,
     search,
     request,
 }) {
@@ -22,7 +27,12 @@ export default function Show({
         slug === "berita" ||
         slug === "buletin" ||
         slug === "karya-mahasiswa" ||
-        slug === "opini"
+        slug === "gaya-mahasiswa" ||
+        slug === "resensi-buku" ||
+        slug === "review-film" ||
+        slug === "opini" ||
+        slug === "esai" ||
+        slug === "puisi"
     ) {
         return (
             <CategoryLayout
@@ -31,7 +41,12 @@ export default function Show({
                 berita={berita}
                 buletin={buletin}
                 karyaMahasiswa={karyaMahasiswa}
+                gayaMahasiswa={gayaMahasiswa}
+                resensiBuku={resensiBuku}
+                reviewFilm={reviewFilm}
                 opini={opini}
+                esai={esai}
+                puisi={puisi}
             />
         );
     } else if (slug === "search") {

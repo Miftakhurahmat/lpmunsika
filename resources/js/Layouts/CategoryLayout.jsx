@@ -13,7 +13,12 @@ export default function CategoryLayout({
     berita,
     buletin,
     karyaMahasiswa,
+    gayaMahasiswa,
+    resensiBuku,
+    reviewFilm,
     opini,
+    esai,
+    puisi,
 }) {
     const category = categories.filter((category) => category.slug === slug);
 
@@ -25,8 +30,18 @@ export default function CategoryLayout({
         articles = buletin;
     } else if (slug === "karya-mahasiswa") {
         articles = karyaMahasiswa;
+    } else if (slug === "gaya-mahasiswa") {
+        articles = gayaMahasiswa;
+    } else if (slug === "resensi-buku") {
+        articles = resensiBuku;
+    } else if (slug === "review-film") {
+        articles = reviewFilm;
     } else if (slug === "opini") {
         articles = opini;
+    } else if (slug === "esai") {
+        articles = esai;
+    } else if (slug === "puisi") {
+        articles = puisi;
     }
 
     return (
@@ -37,7 +52,7 @@ export default function CategoryLayout({
 
             <div className="xl:px-28 xl:grid xl:grid-cols-3">
                 <section className="p-5 xl:col-span-2">
-                    <h2 className="font-bold text-3xl border-b-8 w-max border-red-500 uppercase">
+                    <h2 className="font-bold text-xl xl:text-3xl border-b-8 w-max border-red-500 uppercase">
                         Category: {category[0].category_name}
                     </h2>
                     <hr />
