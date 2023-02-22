@@ -13,7 +13,12 @@ export default function Index({
     berita,
     buletin,
     karyaMahasiswa,
+    gayaMahasiswa,
+    resensiBuku,
+    reviewFilm,
     opini,
+    esai,
+    puisi,
 }) {
     return (
         <>
@@ -68,18 +73,22 @@ export default function Index({
                                 Karya Mahasiswa
                             </Link>
                             <hr />
-                            <Card articles={karyaMahasiswa.data} />
+                            <Card articles={resensiBuku.data} />
+                            <Card articles={reviewFilm.data} />
+                            <Card articles={opini.data} />
+                            <Card articles={esai.data} />
+                            <Card articles={puisi.data} />
                         </div>
                         <div className="pt-10">
                             <Link
                                 as="h2"
-                                href="/detail/opini"
+                                href="/detail/gaya-mahasiswa"
                                 className="font-bold text-3xl border-b-8 w-max border-red-500 uppercase hover:cursor-pointer"
                             >
-                                opini
+                                Gaya Mahasiswa
                             </Link>
                             <hr />
-                            <Card articles={opini.data} />
+                            <Card articles={gayaMahasiswa.data} />
                         </div>
                     </div>
                 </section>

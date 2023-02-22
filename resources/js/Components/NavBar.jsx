@@ -273,7 +273,7 @@ export default function NavBar({ slug, categories }) {
                                     <p className="transition ease-in-out duration-300 hover:text-red-500 peer cursor-pointer">
                                         Karya Mahasiswa
                                     </p>
-                                    <div className="absolute bg-slate-100 flex flex-col w-full gap-1 z-10 p-1 invisible peer-hover:visible hover:visible -top-36">
+                                    <div className="absolute bg-slate-100 flex flex-col w-full gap-1 z-10 p-1 invisible peer-hover:visible hover:visible">
                                         <Link
                                             className="hover:text-red-500"
                                             href="resensi-buku"
@@ -331,7 +331,7 @@ export default function NavBar({ slug, categories }) {
                                     <p className="transition ease-in-out duration-300 hover:text-red-500 peer cursor-pointer">
                                         Karya Mahasiswa
                                     </p>
-                                    <div className="absolute bg-slate-100 flex flex-col w-full gap-1 z-10 p-1 invisible peer-hover:visible hover:visible -top-36">
+                                    <div className="absolute bg-slate-100 flex flex-col w-full gap-1 z-10 p-1 invisible peer-hover:visible hover:visible">
                                         <Link
                                             className="hover:text-red-500"
                                             href="detail/resensi-buku"
