@@ -18,7 +18,7 @@ export default function CategoryLayout({
     reviewFilm,
     opini,
     esai,
-    puisi,
+    artikel,
 }) {
     const category = categories.filter((category) => category.slug === slug);
 
@@ -40,8 +40,8 @@ export default function CategoryLayout({
         articles = opini;
     } else if (slug === "esai") {
         articles = esai;
-    } else if (slug === "puisi") {
-        articles = puisi;
+    } else if (slug === "artikel") {
+        articles = artikel;
     }
 
     return (

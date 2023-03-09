@@ -94,9 +94,9 @@ export default function Footer({ categories, slug }) {
                                     </Link>
                                     <Link
                                         className="hover:text-red-500"
-                                        href="detail/puisi"
+                                        href="detail/artikel"
                                     >
-                                        Puisi
+                                        Artikel
                                     </Link>
                                 </div>
                             </div>
@@ -199,9 +199,9 @@ export default function Footer({ categories, slug }) {
                                     </Link>
                                     <Link
                                         className="hover:text-red-500"
-                                        href="puisi"
+                                        href="artikel"
                                     >
-                                        Puisi
+                                        Artikel
                                     </Link>
                                 </div>
                             </div>

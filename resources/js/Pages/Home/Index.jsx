@@ -18,7 +18,7 @@ export default function Index({
     reviewFilm,
     opini,
     esai,
-    puisi,
+    artikel,
 }) {
     return (
         <>
@@ -77,7 +77,7 @@ export default function Index({
                             <Card articles={reviewFilm.data} />
                             <Card articles={opini.data} />
                             <Card articles={esai.data} />
-                            <Card articles={puisi.data} />
+                            <Card articles={artikel.data} />
                         </div>
                         <div className="pt-10">
                             <Link

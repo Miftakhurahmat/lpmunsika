@@ -19,7 +19,7 @@ export default function Show({
     reviewFilm,
     opini,
     esai,
-    puisi,
+    artikel,
     search,
     request,
 }) {
@@ -32,7 +32,7 @@ export default function Show({
         slug === "review-film" ||
         slug === "opini" ||
         slug === "esai" ||
-        slug === "puisi"
+        slug === "artikel"
     ) {
         return (
             <CategoryLayout
@@ -46,7 +46,7 @@ export default function Show({
                 reviewFilm={reviewFilm}
                 opini={opini}
                 esai={esai}
-                puisi={puisi}
+                artikel={artikel}
             />
         );
     } else if (slug === "search") {
