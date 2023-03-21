@@ -12,11 +12,11 @@ export default function Podcast() {
             <iframe
                 className="mt-10 h-60"
                 style={{ borderRadius: "12px" }}
-                src="https://open.spotify.com/embed/episode/4BhPeawI8KaAt4QWs8WU6R?utm_source=generator"
+                src="https://open.spotify.com/embed/episode/1h3EtWO6MB3sQTs4dOete1?utm_source=generator"
                 width="100%"
                 height="352"
                 frameBorder="0"
-                allowFullScreen=""
+                allowfullscreen=""
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
             ></iframe>

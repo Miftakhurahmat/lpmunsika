@@ -14,11 +14,11 @@ export default function Youtube() {
             <hr />
             <iframe
                 className="w-full h-60 rounded-xl mt-10"
-                src="https://www.youtube.com/embed/8YGOnUgq6hE"
+                src="https://www.youtube.com/embed/1sx6HkdGL5A"
                 title="YouTube video player"
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
             ></iframe>
             <iframe
                 className="w-full h-60 rounded-xl mt-10"
