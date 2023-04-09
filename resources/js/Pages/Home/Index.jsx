@@ -67,7 +67,6 @@ export default function Index({
                         <div className="pt-10">
                             <Link
                                 as="h2"
-                                href="/detail/karya-mahasiswa"
                                 className="font-bold text-3xl border-b-8 w-max border-red-500 uppercase hover:cursor-pointer"
                             >
                                 Karya Mahasiswa

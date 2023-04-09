@@ -116,6 +116,12 @@ export default function NavBar({ slug, categories }) {
                                 >
                                     Artikel
                                 </Link>
+                                <Link
+                                    className="hover:text-red-500"
+                                    href="detail/puisi"
+                                >
+                                    Puisi
+                                </Link>
                             </div>
                         </div>
                         <Link
@@ -173,6 +179,12 @@ export default function NavBar({ slug, categories }) {
                                     href="artikel"
                                 >
                                     Artikel
+                                </Link>
+                                <Link
+                                    className="hover:text-red-500"
+                                    href="puisi"
+                                >
+                                    Puisi
                                 </Link>
                             </div>
                         </div>
@@ -304,6 +316,12 @@ export default function NavBar({ slug, categories }) {
                                         >
                                             Artikel
                                         </Link>
+                                        <Link
+                                            className="hover:text-red-500"
+                                            href="puisi"
+                                        >
+                                            Puisi
+                                        </Link>
                                     </div>
                                 </div>
                                 <Link
@@ -361,6 +379,12 @@ export default function NavBar({ slug, categories }) {
                                             href="detail/artikel"
                                         >
                                             Atikel
+                                        </Link>
+                                        <Link
+                                            className="hover:text-red-500"
+                                            href="detail/puisi"
+                                        >
+                                            Puisi
                                         </Link>
                                     </div>
                                 </div>

@@ -14,7 +14,7 @@ export default function Youtube() {
             <hr />
             <iframe
                 className="w-full h-60 rounded-xl mt-10"
-                src="https://www.youtube.com/embed/1sx6HkdGL5A"
+                src="https://www.youtube.com/embed/zm2jLlY92zw"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -22,7 +22,7 @@ export default function Youtube() {
             ></iframe>
             <iframe
                 className="w-full h-60 rounded-xl mt-10"
-                src="https://www.youtube.com/embed/hCdkI3WgRqA"
+                src="https://www.youtube.com/embed/1sx6HkdGL5A"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -30,7 +30,7 @@ export default function Youtube() {
             ></iframe>
             <iframe
                 className="w-full h-60 rounded-xl mt-10"
-                src="https://www.youtube.com/embed/lTYARHJLvPQ"
+                src="https://www.youtube.com/embed/8YGOnUgq6hE"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

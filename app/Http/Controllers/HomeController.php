@@ -32,6 +32,7 @@ class HomeController extends Controller
             "opini" => Article::where("category_id", 7)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(1),
             "esai" => Article::where("category_id", 8)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(1),
             "artikel" => Article::where("category_id", 9)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(1),
+            "puisi" => Article::where("category_id", 10)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(1),
             'canLogin' => Route::has('login'),
             // 'canRegister' => Route::has('register'),
         ]);
@@ -84,6 +85,7 @@ class HomeController extends Controller
             "opini" => Article::where("category_id", 7)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
             "esai" => Article::where("category_id", 8)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
             "artikel" => Article::where("category_id", 9)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
+            "puisi" => Article::where("category_id", 10)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
             "search" => Article::where("body", "like", "%" . $search . "%")->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->get(),
             "request" => $search
 
