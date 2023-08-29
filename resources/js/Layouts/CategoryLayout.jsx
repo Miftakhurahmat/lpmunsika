@@ -2,7 +2,7 @@ import Card from "@/Components/Card";
 import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
 import Pagination from "@/Components/Pagination";
-import Podcast from "@/Components/Podcast";
+import Podcast from "@/Components/Sportify";
 import Youtube from "@/Components/Youtube";
 import { Head, Link } from "@inertiajs/inertia-react";
 import React from "react";

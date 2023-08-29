@@ -1,6 +1,6 @@
 import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
-import Podcast from "@/Components/Podcast";
+import Podcast from "@/Components/Sportify";
 import Youtube from "@/Components/Youtube";
 import { Head } from "@inertiajs/inertia-react";
 import React from "react";

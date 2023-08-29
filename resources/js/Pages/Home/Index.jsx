@@ -4,15 +4,14 @@ import NavBar from "../../Components/NavBar";
 import Footer from "@/Components/Footer";
 import Card from "@/Components/Card";
 import Youtube from "@/Components/Youtube";
-import Podcast from "@/Components/Podcast";
+import Sportify from "@/Components/Sportify";
 import Hero from "@/Components/Hero";
 
 export default function Index({
-    categories,
+    sportifies,
     articles,
     berita,
     buletin,
-    karyaMahasiswa,
     gayaMahasiswa,
     resensiBuku,
     reviewFilm,
@@ -24,7 +23,7 @@ export default function Index({
         <>
             <Head title="LPM Unsika | Official Website" />
 
-            <NavBar categories={categories} />
+            <NavBar />
 
             <div className="xl:grid xl:grid-cols-3 xl:px-28">
                 <section className="p-5 xl:col-span-2">
@@ -94,11 +93,11 @@ export default function Index({
 
                 <aside>
                     <Youtube />
-                    <Podcast />
+                    <Sportify sportifies={sportifies} />
                 </aside>
             </div>
 
-            <Footer categories={categories} />
+            <Footer />
         </>
     );
 }

@@ -3,10 +3,9 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SportifyController;
 use App\Http\Controllers\HomeController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +28,9 @@ Route::resource('/category', CategoryController::class)
     ->middleware(['auth', 'verified']);
 
 Route::resource('/article', ArticleController::class)
+    ->middleware(['auth', 'verified']);
+
+Route::resource('/sportify', SportifyController::class)
     ->middleware(['auth', 'verified']);
 
 require __DIR__ . '/auth.php';

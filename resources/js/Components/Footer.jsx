@@ -1,7 +1,7 @@
 import { Link } from "@inertiajs/inertia-react";
 import React from "react";
 
-export default function Footer({ categories, slug }) {
+export default function Footer({ slug }) {
     return (
         <footer className="bg-slate-800 p-5 text-slate-300 xl:px-32">
             {slug === undefined ? (

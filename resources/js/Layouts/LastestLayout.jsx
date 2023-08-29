@@ -4,7 +4,7 @@ import { Head, Link } from "@inertiajs/inertia-react";
 import React from "react";
 import Footer from "@/Components/Footer";
 import Youtube from "@/Components/Youtube";
-import Podcast from "@/Components/Podcast";
+import Podcast from "@/Components/Sportify";
 import Pagination from "@/Components/Pagination";
 
 export default function LastestLayout({ categories, slug, articles }) {

@@ -3,7 +3,7 @@ import { Link } from "@inertiajs/inertia-react";
 import React, { useRef, useState } from "react";
 import { Transition } from "react-transition-group";
 
-export default function NavBar({ slug, categories }) {
+export default function NavBar({ slug }) {
     const [nav, setNav] = useState(false);
 
     const nodeRef = useRef(null);
@@ -378,7 +378,7 @@ export default function NavBar({ slug, categories }) {
                                             className="hover:text-red-500"
                                             href="detail/artikel"
                                         >
-                                            Atikel
+                                            Artikel
                                         </Link>
                                         <Link
                                             className="hover:text-red-500"

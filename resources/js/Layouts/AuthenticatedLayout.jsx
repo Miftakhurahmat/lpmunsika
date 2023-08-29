@@ -40,6 +40,12 @@ export default function Authenticated({ auth, header, children }) {
                                 >
                                     Article
                                 </NavLink>
+                                <NavLink
+                                    href={route("sportify.index")}
+                                    active={route().current("sportify.index")}
+                                >
+                                    Sportify
+                                </NavLink>
                             </div>
                         </div>
 
@@ -150,6 +156,12 @@ export default function Authenticated({ auth, header, children }) {
                             active={route().current("article.index")}
                         >
                             Article
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route("sportify.index")}
+                            active={route().current("sportify.index")}
+                        >
+                            Sportify
                         </ResponsiveNavLink>
                     </div>
 

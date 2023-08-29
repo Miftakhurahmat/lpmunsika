@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Home;
+use App\Models\Sportify;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use Illuminate\Foundation\Application;
 
 
 class HomeController extends Controller
@@ -21,7 +21,7 @@ class HomeController extends Controller
     public function index()
     {
         return Inertia::render("Home/Index", [
-            "categories" => Category::get(),
+            "sportifies" => Sportify::orderBy("id", "DESC")->get(),
             "articles" => Article::where("is_active", 1)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(3),
             "berita" => Article::where("category_id", 1)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(3),
             "buletin" => Article::where("category_id", 2)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(3),
@@ -34,7 +34,6 @@ class HomeController extends Controller
             "artikel" => Article::where("category_id", 9)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(1),
             "puisi" => Article::where("category_id", 10)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(1),
             'canLogin' => Route::has('login'),
-            // 'canRegister' => Route::has('register'),
         ]);
     }
 
@@ -67,8 +66,6 @@ class HomeController extends Controller
      */
     public function show(Request $request, $slug)
     {
-        $search = $request->search;
-
         Article::where("slug", $slug)->increment("views", 1);
 
         return Inertia::render("Home/Show", [
@@ -86,8 +83,8 @@ class HomeController extends Controller
             "esai" => Article::where("category_id", 8)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
             "artikel" => Article::where("category_id", 9)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
             "puisi" => Article::where("category_id", 10)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
-            "search" => Article::where("body", "like", "%" . $search . "%")->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->get(),
-            "request" => $search
+            "search" => Article::where("body", "like", "%" . $request->search . "%")->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->get(),
+            "request" => $request->search
 
         ]);
     }
