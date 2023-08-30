@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Podcast({ sportifies }) {
-    console.log(sportifies);
     return (
         <div className="p-5">
             <h2 className="font-bold text-3xl border-b-8 w-max border-red-500 uppercase">
@@ -18,9 +17,10 @@ export default function Podcast({ sportifies }) {
                     width="100%"
                     height="352"
                     frameBorder="0"
-                    allowfullscreen=""
+                    allowFullScreen=""
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
+                    key={sportify.id}
                 ></iframe>
             ))}
         </div>

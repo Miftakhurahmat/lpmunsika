@@ -1,12 +1,18 @@
 import Card from "@/Components/Card";
 import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
-import Podcast from "@/Components/Sportify";
+import Sportify from "@/Components/Sportify";
 import Youtube from "@/Components/Youtube";
 import { Head } from "@inertiajs/inertia-react";
 import React from "react";
 
-export default function SearchLayout({ search, categories, slug, request }) {
+export default function SearchLayout({
+    search,
+    categories,
+    sportifies,
+    slug,
+    request,
+}) {
     return (
         <>
             <Head title="Search" />
@@ -25,7 +31,7 @@ export default function SearchLayout({ search, categories, slug, request }) {
                 <div className="xl:col-span-1">
                     <Youtube />
 
-                    <Podcast />
+                    <Sportify sportifies={sportifies} />
                 </div>
             </div>
 

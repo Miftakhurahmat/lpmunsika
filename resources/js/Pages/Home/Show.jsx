@@ -9,6 +9,7 @@ import SearchLayout from "@/Layouts/SearchLayout";
 export default function Show({
     slug,
     categories,
+    sportifies,
     article,
     articles,
     berita,
@@ -40,6 +41,7 @@ export default function Show({
             <CategoryLayout
                 slug={slug}
                 categories={categories}
+                sportifies={sportifies}
                 berita={berita}
                 buletin={buletin}
                 karyaMahasiswa={karyaMahasiswa}
@@ -57,6 +59,7 @@ export default function Show({
             <SearchLayout
                 search={search}
                 categories={categories}
+                sportifies={sportifies}
                 slug={slug}
                 request={request}
             />
@@ -65,18 +68,32 @@ export default function Show({
         return (
             <LastestLayout
                 categories={categories}
+                sportifies={sportifies}
                 slug={slug}
                 articles={articles}
             />
         );
     } else if (slug === "tentang-kami") {
-        return <AboutLayout categories={categories} slug={slug} />;
+        return (
+            <AboutLayout
+                categories={categories}
+                sportifies={sportifies}
+                slug={slug}
+            />
+        );
     } else if (slug === "pedoman-media-siber") {
-        return <PedomanLayout categories={categories} slug={slug} />;
+        return (
+            <PedomanLayout
+                categories={categories}
+                sportifies={sportifies}
+                slug={slug}
+            />
+        );
     } else {
         return (
             <ArticleLayout
                 categories={categories}
+                sportifies={sportifies}
                 slug={slug}
                 article={article}
             />

@@ -71,6 +71,7 @@ class HomeController extends Controller
         return Inertia::render("Home/Show", [
             "slug" => $slug,
             "categories" => Category::get(),
+            "sportifies" => Sportify::orderBy("id", "DESC")->get(),
             "article" => Article::where("slug", $slug)->with(["user:id,name", "category:id,slug,category_name"])->first(),
             "articles" => Article::with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
             "berita" => Article::where("category_id", 1)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),

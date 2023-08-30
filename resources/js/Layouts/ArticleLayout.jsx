@@ -1,11 +1,16 @@
 import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
-import Podcast from "@/Components/Sportify";
+import Sportify from "@/Components/Sportify";
 import Youtube from "@/Components/Youtube";
 import { Head } from "@inertiajs/inertia-react";
 import React, { useEffect } from "react";
 
-export default function ArticleLayout({ categories, slug, article }) {
+export default function ArticleLayout({
+    categories,
+    sportifies,
+    slug,
+    article,
+}) {
     (function () {
         // DON'T EDIT BELOW THIS LINE
         var d = document,
@@ -130,7 +135,7 @@ export default function ArticleLayout({ categories, slug, article }) {
                 <div className="xl:col-span-1">
                     <Youtube />
 
-                    <Podcast />
+                    <Sportify sportifies={sportifies} />
                 </div>
             </div>
 

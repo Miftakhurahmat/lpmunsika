@@ -1,11 +1,11 @@
 import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
-import Podcast from "@/Components/Sportify";
+import Sportify from "@/Components/Sportify";
 import Youtube from "@/Components/Youtube";
 import { Head } from "@inertiajs/inertia-react";
 import React from "react";
 
-export default function PedomanLayout({ categories, slug }) {
+export default function PedomanLayout({ categories, sportifies, slug }) {
     return (
         <>
             <Head title="Pedoman Media Siber" />
@@ -329,7 +329,7 @@ export default function PedomanLayout({ categories, slug }) {
                 <div className="xl:col-span-1">
                     <Youtube />
 
-                    <Podcast />
+                    <Sportify sportifies={sportifies} />
                 </div>
             </div>
 

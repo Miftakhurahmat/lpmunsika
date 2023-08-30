@@ -4,10 +4,15 @@ import { Head, Link } from "@inertiajs/inertia-react";
 import React from "react";
 import Footer from "@/Components/Footer";
 import Youtube from "@/Components/Youtube";
-import Podcast from "@/Components/Sportify";
+import Sportify from "@/Components/Sportify";
 import Pagination from "@/Components/Pagination";
 
-export default function LastestLayout({ categories, slug, articles }) {
+export default function LastestLayout({
+    categories,
+    sportifies,
+    slug,
+    articles,
+}) {
     return (
         <>
             <Head title="Berita Terkini" />
@@ -27,7 +32,7 @@ export default function LastestLayout({ categories, slug, articles }) {
                 <div className="xl:col-span-1">
                     <Youtube />
 
-                    <Podcast />
+                    <Sportify sportifies={sportifies} />
                 </div>
             </div>
 

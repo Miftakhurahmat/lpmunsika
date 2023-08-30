@@ -2,7 +2,7 @@ import Card from "@/Components/Card";
 import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
 import Pagination from "@/Components/Pagination";
-import Podcast from "@/Components/Sportify";
+import Sportify from "@/Components/Sportify";
 import Youtube from "@/Components/Youtube";
 import { Head, Link } from "@inertiajs/inertia-react";
 import React from "react";
@@ -10,6 +10,7 @@ import React from "react";
 export default function CategoryLayout({
     slug,
     categories,
+    sportifies,
     berita,
     buletin,
     karyaMahasiswa,
@@ -66,7 +67,7 @@ export default function CategoryLayout({
                 <div className="xl:col-span-1">
                     <Youtube />
 
-                    <Podcast />
+                    <Sportify sportifies={sportifies} />
                 </div>
             </div>
 

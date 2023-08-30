@@ -1,11 +1,11 @@
 import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
-import Podcast from "@/Components/Sportify";
+import Sportify from "@/Components/Sportify";
 import Youtube from "@/Components/Youtube";
 import { Head } from "@inertiajs/inertia-react";
 import React from "react";
 
-export default function AboutLayout({ categories, slug }) {
+export default function AboutLayout({ categories, sportifies, slug }) {
     return (
         <>
             <Head title="Tentang Kami" />
@@ -65,7 +65,7 @@ export default function AboutLayout({ categories, slug }) {
                 <div className="xl:col-span-1">
                     <Youtube />
 
-                    <Podcast />
+                    <Sportify sportifies={sportifies} />
                 </div>
             </div>
 
