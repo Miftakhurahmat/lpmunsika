@@ -122,6 +122,12 @@ export default function NavBar({ slug }) {
                                 >
                                     Puisi
                                 </Link>
+                                <Link
+                                    className="hover:text-red-500"
+                                    href="detail/cerpen"
+                                >
+                                    Cerpen
+                                </Link>
                             </div>
                         </div>
                         <Link
@@ -185,6 +191,12 @@ export default function NavBar({ slug }) {
                                     href="puisi"
                                 >
                                     Puisi
+                                </Link>
+                                <Link
+                                    className="hover:text-red-500"
+                                    href="cerpen"
+                                >
+                                    Cerpen
                                 </Link>
                             </div>
                         </div>
@@ -322,6 +334,12 @@ export default function NavBar({ slug }) {
                                         >
                                             Puisi
                                         </Link>
+                                        <Link
+                                            className="hover:text-red-500"
+                                            href="cerpen"
+                                        >
+                                            Cerpen
+                                        </Link>
                                     </div>
                                 </div>
                                 <Link
@@ -385,6 +403,12 @@ export default function NavBar({ slug }) {
                                             href="detail/puisi"
                                         >
                                             Puisi
+                                        </Link>
+                                        <Link
+                                            className="hover:text-red-500"
+                                            href="detail/cerpen"
+                                        >
+                                            Cerpen
                                         </Link>
                                     </div>
                                 </div>

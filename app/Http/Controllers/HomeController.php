@@ -33,6 +33,7 @@ class HomeController extends Controller
             "esai" => Article::where("category_id", 8)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(1),
             "artikel" => Article::where("category_id", 9)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(1),
             "puisi" => Article::where("category_id", 10)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(1),
+            "cerpen" => Article::where("category_id", 11)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(1),
             'canLogin' => Route::has('login'),
         ]);
     }
@@ -84,6 +85,7 @@ class HomeController extends Controller
             "esai" => Article::where("category_id", 8)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
             "artikel" => Article::where("category_id", 9)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
             "puisi" => Article::where("category_id", 10)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
+            "cerpen" => Article::where("category_id", 11)->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->paginate(10),
             "search" => Article::where("body", "like", "%" . $request->search . "%")->with(["user:id,name", "category:id,slug,category_name"])->orderBy("id", "DESC")->get(),
             "request" => $request->search
 

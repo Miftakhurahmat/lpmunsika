@@ -21,6 +21,7 @@ export default function CategoryLayout({
     esai,
     artikel,
     puisi,
+    cerpen,
 }) {
     const category = categories.filter((category) => category.slug === slug);
 
@@ -46,6 +47,8 @@ export default function CategoryLayout({
         articles = artikel;
     } else if (slug === "puisi") {
         articles = puisi;
+    } else if (slug === "cerpen") {
+        articles = cerpen;
     }
 
     return (

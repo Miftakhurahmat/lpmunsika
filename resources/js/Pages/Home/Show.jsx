@@ -22,6 +22,7 @@ export default function Show({
     esai,
     artikel,
     puisi,
+    cerpen,
     search,
     request,
 }) {
@@ -35,7 +36,8 @@ export default function Show({
         slug === "opini" ||
         slug === "esai" ||
         slug === "artikel" ||
-        slug === "puisi"
+        slug === "puisi" ||
+        slug === "cerpen"
     ) {
         return (
             <CategoryLayout
@@ -52,6 +54,7 @@ export default function Show({
                 esai={esai}
                 artikel={artikel}
                 puisi={puisi}
+                cerpen={cerpen}
             />
         );
     } else if (slug === "search") {

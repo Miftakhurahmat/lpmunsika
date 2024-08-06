@@ -104,6 +104,12 @@ export default function Footer({ slug }) {
                                     >
                                         Puisi
                                     </Link>
+                                    <Link
+                                        className="hover:text-red-500"
+                                        href="detail/cerpen"
+                                    >
+                                        Cerpen
+                                    </Link>
                                 </div>
                             </div>
                             <Link
